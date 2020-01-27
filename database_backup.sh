@@ -10,7 +10,7 @@ BACKUP_CREATION_DATE=$(date +%F)
 # <DB_TYPE> <USERNAME> <PASSWORD> <HOST> <DB> <TABLE/AUTH_DB>
 declare -a BACKUP_TABLES
 BACKUP_TABLES[1]='mysql,<username>,<password>,<host>,<DB>,<table>'
-BACKUP_TABLESi[2]='mongo,<username>,<password>,<host>,<DB>,<AUTH_DB>'
+BACKUP_TABLES[2]='mongo,<username>,<password>,<host>,<DB>,<AUTH_DB>'
 
 # echo $HOSTN $DAT $1 | nc -w1 -u 172.24.4.44 1518
     
@@ -66,11 +66,11 @@ do
 	logger "start backup $SOURCE ..."
 
 	if [[ $DB_TYPE = "mysql" ]]
-    then
+        then
 		backup_mysql ${DATAs[1]}  ${DATAs[2]}  ${DATAs[3]}  ${DATAs[4]} ${DATAs[5]}
-    fi
+        fi
 	if [[ $DB_TYPE = "mongo" ]]
-    then
+        then
 		backup_mongo ${DATAs[1]}  ${DATAs[2]}  ${DATAs[3]}  ${DATAs[4]} ${DATAs[5]}
 	fi
 
