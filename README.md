@@ -11,5 +11,5 @@ mongodump --quiet --host <db_hostname> --u<username> -p<password> --db <db_name>
 
 compress data with example command syntax:
 ```bash
-gzip /export/data/path/file.dump
+gzip -9 /export/data/path/file.dump
 ```
