@@ -34,7 +34,7 @@ backup_mysql() {
 	mkdir -p $DIR_PATH
 
 	mysqldump -u $USERNAME -p$PASSWORD -h$HOST --routines $DB $TABLE > $BACKUP_FILE
-	gzip $BACKUP_FILE
+	gzip -9 $BACKUP_FILE
 }
 
 backup_mongo() {
@@ -50,7 +50,7 @@ backup_mongo() {
 	mkdir -p $DIR_PATH
 
 	mongodump --quiet --host $HOST -u$USERNAME -p$PASSWORD --db $DB --out=$BACKUP_FILE --authenticationDatabase $AUTH_DB
-	gzip -r $BACKUP_FILE
+	gzip -r -9 $BACKUP_FILE
 }
 
 
